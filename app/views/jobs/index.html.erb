@@ -28,6 +28,7 @@
       <br>
       <tr>
         <td>职缺</td>
+        <td>工作城市</td>
         <td>薪资下限</td>
         <td>薪资上限</td>
         <td>刊登时间</td>
@@ -36,6 +37,7 @@
       <% @jobs.each do |job| %>
          <tr>
            <td><%= link_to(job.title, job_path(job)) %></td>
+           <td><%= link_to(job.city, job_path(job)) %></td>
            <td><%= link_to(job.wage_lower_bound, job_path(job)) %></td>
            <td><%= link_to(job.wage_upper_bound, job_path(job)) %></td>
            <td><%= job.created_at %></td>
