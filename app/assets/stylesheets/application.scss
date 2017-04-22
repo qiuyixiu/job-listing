@@ -159,6 +159,13 @@
   height: 32px; //定制图片高度
 }
 
+#search-id {
+  width: 200px;
+  padding-top: 7px;
+  background-color: #FFE0B2;
+
+}
+
 .container-fluid .jumbotron{
   padding-bottom: 110px; //内部的底部边距，这样按钮就不会很靠近底部了
   margin: 0 -15px 20px; //顶部margin为0，因此可以直接接着导航栏； 左右margin为负15,因此可以顶到浏览器的边缘（抵消 container-fluid r  15px 左右padding)；底部margin为20，会跟下面的内容撑开距离
@@ -286,4 +293,23 @@
 
 footer {
   background: #FDD835;
+}
+
+.jobs-show0 {
+  border-bottom: 1px dotted #CCC;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+}
+
+
+/* Search.html.erb
+*/
+
+.search-info-title {
+  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+  color: #0d6ded;
+  font-size: 20px;
+  text-align: center;
 }
