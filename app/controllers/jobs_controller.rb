@@ -62,21 +62,23 @@ class JobsController < ApplicationController
   end
 
 
+
+
   protected
 
   def validate_search_key
     @query_string = params[:q].gsub(/\\|\'|\/|\?/, "")
     if params[:q].present?
-      @search_criteria =  {
-        title_or_city_cont: @query_string
-      }
+      @search_criteria =  { title_or_city_cont: @query_string }
     end
   end
 
 
   def search_criteria(query_string)
-    { :title_or_city_cont => query_string }
+    { :title_cont => query_string }
   end
+
+
 
   private
 

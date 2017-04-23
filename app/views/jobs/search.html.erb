@@ -1,13 +1,8 @@
 <div>
   <br>
-<% if @query_string.blank? %>
-    <div class="search-info-title">
-      Sorry, The search content cannot be blank, please type some product into to search.
-    </div>
-
-  <% elsif @jobs.blank? %>
+  <% if @jobs.blank? %>
     <br>
-    <h2 class="search-info-title">搜索信息不能为空，请输入关键字搜索</h2>
+    <h2 class="search-info-title">抱歉，您想要的皮匠职位没有哦</h2>
   <% else %>
     <br>
     <br>
@@ -26,7 +21,7 @@
               发布时间：<%= job.created_at.to_date %>
               工作城市: <%= job.city %>
             </div>
-            <p ><%= link_to(render_highlight_content(job,@query_string),job_path(job)) %></p>
+            <p ><%= link_to(job.title, job_path(job)) %></p>
 
           </div>
         </div>
