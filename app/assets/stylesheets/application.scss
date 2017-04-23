@@ -30,8 +30,8 @@ body {
   margin-bottom: 50px;
 }
 
-.jumbotron {
-  background-image:url('http://oon3erbcp.bkt.clouddn.com/leather.jpg');
+.jumbotron  {
+  background-image:url('http://oon3erbcp.bkt.clouddn.com/gzs2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
@@ -39,16 +39,18 @@ body {
 
 .title {
   background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
-  max-width: 500px;//最大宽度
+  max-width: 100%;//最大宽度
   margin-top: 200px;//和顶部拉开距离
   margin-bottom: 0;//这样就可以紧接信息面的描述文字
   border-top-right-radius: 3px;//右上角圆边
   border-top-left-radius: 3px;//左上角圆边
 }
 
-.jumbotron h1, .jumbotron .h1 {
-  text-align: right;//文字左对齐
-  color: #222; //字体颜色
+
+
+.jumbotron h2, .jumbotron .h2 {
+  text-align: center;//文字左对齐
+  color: black; //字体颜色
 
   padding: 50px 20px 0;//上50px, 左右20px, 下0
 }
@@ -56,11 +58,11 @@ body {
 .jumbotron p {
   margin: 0;//上下左右margin为0
   font-size: 26px;//字体大小
-  max-width: 500px;//最大宽度
+  max-width: 100%;//最大宽度
   background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
   padding: 20px;//上下左右padding为20px
-  text-align:right;//文字左对齐
-  color: #222;//字体颜色
+  text-align:center;//文字左对齐
+  color: black;//字体颜色
 
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -108,9 +110,9 @@ body {
 }
 
 .navbar-default {
-  background-color: #FDD835;  //背景颜色
+  background-color: #E4D2AD;  //背景颜色
 
-  border-color: #FDD835;   //边框色
+  border-color: #E4D2AD;   //边框色
 
   margin-bottom: 0;  //底部 margin 不撑开距离
 }
@@ -172,7 +174,7 @@ body {
 #search-id {
   width: 200px;
   padding-top: 7px;
-  background-color: #FFE0B2;
+  background-color: #E4D2AD;
 
 }
 
@@ -308,7 +310,7 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background: #FDD835;
+  background: #E4D2AD;
 
   p {
     color: black;
