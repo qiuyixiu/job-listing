@@ -20,6 +20,16 @@
  @import "font-awesome";
 
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+}
+
 .jumbotron {
   background-image:url('http://oon3erbcp.bkt.clouddn.com/leather.jpg');
   background-repeat: no-repeat;
@@ -291,8 +301,19 @@
   font-size: 12px
 }
 
-footer {
+//-------Footer----------
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
   background: #FDD835;
+
+  p {
+    color: black;
+    margin-top: 30px;
+  }
 }
 
 .jobs-show0 {
