@@ -17,4 +17,6 @@
 //= require bootstrap-sprockets
 //= require bootstrap/dropdown
 //= require bootstrap/modal
+//= require bootstrap/tab
+//= require local_time
 //= require_tree .

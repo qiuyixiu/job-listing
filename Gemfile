@@ -38,6 +38,7 @@ gem 'ransack'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'seo_helper'
+gem 'local_time'
 
 
 group :development, :test do

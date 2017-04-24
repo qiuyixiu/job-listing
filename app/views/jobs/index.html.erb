@@ -2,6 +2,19 @@
   <div class="job">
 
   </div>
+
+    <ul id="myTab" class="nav nav-tabs" role="tablist">
+      <li class="">
+        <a data-toggle="tab" href="#category-0">学徒</a>
+      </li>
+      <li class="active">
+        <a data-toggle="tab" href="#category-1">匠人</a>
+      </li>
+      <li class="">
+        <a data-toggle="tab" href="#category-3">大师</a>
+      </li>
+    </ul>
+
   <div class="dropdown pull-right">
     <br>
     <br>
@@ -27,20 +40,23 @@
       <br>
       <br>
       <tr>
+        <hr>
         <td>职缺</td>
         <td>工作城市</td>
-        <td>薪资下限</td>
-        <td>薪资上限</td>
-        <td>刊登时间</td>
+        <td>薪资范围</td>
+        <td>发布时间</td>
       </tr>
     <tbody>
       <% @jobs.each do |job| %>
          <tr>
            <td><%= link_to(job.title, job_path(job)) %></td>
            <td><%= link_to(job.city, job_path(job)) %></td>
-           <td><%= link_to(job.wage_lower_bound, job_path(job)) %></td>
-           <td><%= link_to(job.wage_upper_bound, job_path(job)) %></td>
-           <td><%= job.created_at %></td>
+           <td width="30%">
+             <span class="badge badge-info">
+               <span class="fa fa-rmb"></span> <%= job.wage_lower_bound%> - <%= job.wage_upper_bound%> 元
+             </span>
+           </td>
+           <td><%= local_time(job.created_at, '%B %e, %Y') %></td>
           </tr>
         <% end %>
       </tbody>

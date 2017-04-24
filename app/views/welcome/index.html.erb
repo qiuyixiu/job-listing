@@ -14,7 +14,7 @@
        <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
 
            <!-- Indicators -->
-           <ol class="carousel-indicators">
+           <ol class="carousel-indicators" >
                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
                <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
@@ -27,14 +27,14 @@
                <div class="item active">
 
                    <!-- Slide Background -->
-                   <img src="http://oon3erbcp.bkt.clouddn.com/gzs2.jpg" alt="工作室"  class="slide-image"/>
+                   <img src="http://oon3erbcp.bkt.clouddn.com/tu-1.jpg" alt="工作室"  class="slide-image"/>
                    <div class="bs-slider-overlay"></div>
 
                    <div class="container">
                        <div class="row">
                            <!-- Slide Text Layer -->
                            <div class="slide-text slide_style_center">
-                               <h1 data-animation="animated zoomInRight">让你手作时有一个好的环境</h1>
+                               <h1 data-animation="animated zoomInRight">让您手作时有一个好的环境</h1>
                                <br>
                                <a href="/jobs" target="_blank" class="btn btn-warning" data-animation="animated fadeInLeft">马上加入</a>
 
@@ -48,11 +48,11 @@
                <div class="item">
 
                    <!-- Slide Background -->
-                   <img src="http://oon3erbcp.bkt.clouddn.com/tu2.jpg" alt="皮鞋"  class="slide-image"/>
+                   <img src="http://oon3erbcp.bkt.clouddn.com/tu-2.jpg" alt="皮鞋"  class="slide-image"/>
                    <div class="bs-slider-overlay"></div>
                    <!-- Slide Text Layer -->
                    <div class="slide-text slide_style_center">
-                       <h1 data-animation="animated flipInX">让你的手工皮具有更多的人喜欢</h1>
+                       <h1 data-animation="animated flipInX">让您的手工皮具有更多的人喜欢</h1>
                        <br>
                        <a href="/jobs" class="btn btn-warning" data-animation="animated fadeInUp">马上加入</a>
                    </div>
@@ -63,11 +63,11 @@
                <div class="item">
 
                    <!-- Slide Background -->
-                   <img src="http://oon3erbcp.bkt.clouddn.com/tu3.jpg" alt="团队"  class="slide-image"/>
+                   <img src="http://oon3erbcp.bkt.clouddn.com/tu-3.jpg" alt="团队"  class="slide-image"/>
                    <div class="bs-slider-overlay"></div>
                    <!-- Slide Text Layer -->
                    <div class="slide-text slide_style_center">
-                       <h1 data-animation="animated zoomInLeft">让你与伙伴们一起成长</h1>
+                       <h1 data-animation="animated zoomInLeft">让您与伙伴们一起成长</h1>
                        <br>
                        <a href="/jobs" class="btn btn-warning" data-animation="animated fadeInLeft">马上加入</a>
                    </div>
@@ -91,6 +91,9 @@
 
        </div> <!-- End  bootstrap-touch-slider Slider -->
     </div>
+
+
+
 
 <!-- section1 -->
 <section id="company">
@@ -167,3 +170,22 @@
     </div>
   </div>
 </section>
+
+<!-- Script to Activate the Carousel -->
+<script>
+$('.carousel').carousel({
+   interval: 5000 //changes the speed
+})
+
+$('#bootstrap-touch-slider').bsTouchSlider();
+
+</script>
+
+<script>
+$(document).ready(function () {
+$('.material-button-toggle').click(function () {
+   $(this).toggleClass('open');
+   $('.option').toggleClass('scale-on');
+});
+});
+</script>
