@@ -4,19 +4,20 @@
           <p><%= link_to(job.title,job_path(job)) %></p>
         </div>
 
+        <div class="col-md-12">
+          <i class="fa fa-location-arrow fa-md" aria-hidden="true" style="color:#FF6F00" ></i>
+          <%= job.city %>
+        </div>
 
-          <div class="col-md-2">
+          <div class="col-md-12">
             <i class="fa fa-jpy fa-md" aria-hidden="true" style="color:#FF6F00"></i>
             <%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %>
           </div>
 
 
-          <div class="col-md-4">
-            <i class="fa fa-location-arrow fa-md" aria-hidden="true" style="color:#FF6F00" ></i>
-            <%= job.city %>
-          </div>
 
-          <div class="col-md-3">
+
+          <div class="col-md-12">
             <span>
               <i class="fa fa-calendar" aria-hidden="true" style="color:#FF6F00"></i>
               <%= local_time(job.created_at, '%B %e, %Y') %> 发布

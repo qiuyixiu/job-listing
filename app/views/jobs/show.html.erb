@@ -1,13 +1,53 @@
-<br>
-<br>
-<br>
-<h1> <%= @job.title %> </h1>
+<br><br><br>
+<div class="container-fluid">
+    <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2"  style="border-radius:20px">
+      <br>
 
-<p>
-  <%= simple_format(@job.description) %>
+          <div class="row">
+            <h1 class="text-center"><%= @job.title %> </h1>
+            <hr>
+          </div>
 
-</p>
+        <div class="row">
+          <div class="text-center">
+            <div class="col-md-4">
+              <i class="fa fa-jpy fa-md" aria-hidden="true" style="color:#FF6F00"></i>
+              <%= @job.wage_lower_bound %> ~ <%= @job.wage_upper_bound %>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-location-arrow fa-md" aria-hidden="true" style="color:#FF6F00" ></i>
+                <%= @job.city %>
+            </div>
+            <div class="col-md-4">
+                  <i class="fa fa-envelope" aria-hidden="true" style="color:#FF6F00"></i>
+                  <%= @job.contact_email %>
+            </div>
+            <div class="col-md-4">
+                  <i class="fa fa-calendar" aria-hidden="true" style="color:#FF6F00"></i>
+                  <%= local_time(@job.created_at, '%B %e, %Y') %> 发布
+            </div>
+            <div class="col-md-4">
+                  <i class="fa fa-address-card-o" aria-hidden="true" style="color:#FF6F00" > </i>
+                  等级
+            </div>
+            <div class="col-md-4">
+                  <i class="fa fa-male" aria-hidden="true" style="color:#FF6F00"></i>
+                  应聘人数：<%= @job.resumes.count %>
+            </div>
 
-<div class="text-center">
-  <%= link_to("投交履历",  new_job_resume_path(@job), :style => "font-size: 30px; text-decoration: underline;") %>
+<br><br><br>
+                  <hr>
+                  <div class="col-md-12">
+                    <strong><span>岗位要求:</sapn> </strong><br>
+                    <p>
+                      <%= simple_format(@job.description, class: "job-description") %>
+                    </p><br>
+                  </div>
+            </div>
+<br><br><br><br><br><hr>
+          <div class="resume text-center">
+                    <%= link_to("投递简历", new_job_resume_path(@job),  class: "btn btn-warning ") %>
+          </div>
+        </div>
+     </div>
 </div>
