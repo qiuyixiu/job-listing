@@ -1,64 +1,30 @@
-<div class="col-md-12">
-  <div class="job">
+<br><br><br>
+<div class="container  jobs_page_size">
 
-  </div>
-
-    <ul id="myTab" class="nav nav-tabs" role="tablist">
-      <li class="">
-        <a data-toggle="tab" href="#category-0">学徒</a>
-      </li>
-      <li class="active">
-        <a data-toggle="tab" href="#category-1">匠人</a>
-      </li>
-      <li class="">
-        <a data-toggle="tab" href="#category-3">大师</a>
-      </li>
+  <h1 class="text-center" style="font-family:Verdana">皮匠职位</h1><br>
+    <ul class="nav nav-tabs row">
+      <li style="margin-left:220px;"><%= link_to "所有职位", jobs_path %></li>
+      <li><%= link_to "学徒", jobs_path(:category => "学徒" ) %></li>
+      <li><%= link_to "匠人", jobs_path(:category => "匠人" ) %></li>
+      <li><%= link_to "大师", jobs_path(:category => "大师" ) %></li>
     </ul>
 
-  <div class="dropdown pull-right">
-    <br>
-    <br>
-    <br>
-     <button class="btn btn-warning" type="button" data-toggle="dropdown" pull-right>排序
-       <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-      <li>
-       <a href="/jobs?order=by_lower_bound">按照薪资下限排序</a>
-      </li>
-      <li>
-       <a href="/jobs?order=by_upper_bound">按照薪资上限排序</a>
-      </li>
-      <li>
-       <a href="/jobs">按照发表时间排序</a>
-      </li>
-    </ul>
-  </div>
-  <table class="table table-hover">
-    <thead>
-      <br>
-      <br>
-      <br>
-      <tr>
-        <hr>
-        <td>职缺</td>
-        <td>工作城市</td>
-        <td>薪资范围</td>
-        <td>发布时间</td>
-      </tr>
-    <tbody>
-      <% @jobs.each do |job| %>
-         <tr>
-           <td><%= link_to(job.title, job_path(job)) %></td>
-           <td><%= link_to(job.city, job_path(job)) %></td>
-           <td width="30%">
-             <span class="badge badge-info">
-               <span class="fa fa-rmb"></span> <%= job.wage_lower_bound%> - <%= job.wage_upper_bound%> 元
-             </span>
-           </td>
-           <td><%= local_time(job.created_at, '%B %e, %Y') %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+
+    <div class="dropdown clearfix pull-right">
+           <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">
+             排序
+             <span class="caret"></span>
+           </button>
+           <ul class="reorder dropdown-menu ">
+             <li><%= link_to("按最低薪资排序", jobs_path(:order => "by_lower_bound")) %></li>
+             <li><%= link_to("按最高薪资排序", jobs_path(:order => "by_upper_bound")) %></li>
+             <li><%= link_to("按发表时间排序", jobs_path ) %></li>
+           </ul>
+     </div>
+<br><br><br>
+      <div class="text-center">
+        <%= render :partial => "job.item", :collection => @jobs, :as => :job %>
+      </div>
+
+
   </div>
