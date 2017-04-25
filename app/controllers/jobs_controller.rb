@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :update, :edit, :destroy]
+  before_action :authenticate_user!, only: [:quit]
   before_action :validate_search_key, only: [:search]
 
   def index

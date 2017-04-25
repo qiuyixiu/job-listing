@@ -2,13 +2,29 @@
 <div class="container  jobs_page_size">
 
   <h1 class="text-center" style="font-family:Verdana">皮匠职位</h1><br>
-    <ul class="nav nav-tabs row">
-      <li style="margin-left:220px;"><%= link_to "所有职位", jobs_path %></li>
-      <li><%= link_to "学徒", jobs_path(:category => "学徒" ) %></li>
-      <li><%= link_to "匠人", jobs_path(:category => "匠人" ) %></li>
-      <li><%= link_to "大师", jobs_path(:category => "大师" ) %></li>
+<div class="row">
+
+    <ul class="nav nav-tabs">
+      <div class="col-md-3 text-center">
+        <img src='<%= image_url 'zhiwei.png' %>'>
+        <li><%= link_to "所有职位", jobs_path %></li>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src='<%= image_url 'xuetu2.png' %>'>
+        <li><%= link_to "学徒", jobs_path(:category => "学徒" ) %></li>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src='<%= image_url 'jiangren2.png' %>'>
+        <li><%= link_to "匠人", jobs_path(:category => "匠人" ) %></li>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src='<%= image_url 'dashi2.png' %>'>
+        <li><%= link_to "大师", jobs_path(:category => "大师" ) %></li>
+      </div>
     </ul>
 
+
+</div>
 
     <div class="dropdown clearfix pull-right">
            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">

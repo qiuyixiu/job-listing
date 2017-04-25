@@ -2,31 +2,22 @@
   <br>
   <% if @jobs.blank? %>
     <br>
-    <h2 class="search-info-title">抱歉，您想要的皮匠职位没有哦</h2>
+    <h2 class="text-center" style="color:#FF6F00">抱歉，您想要的皮匠职位没有哦</h2>
   <% else %>
     <br>
     <br>
     <br>
-    <h2 class="search-info-title"> 有关"<%= @query_string %>"的工作信息 </h2>
+    <h2 class="text-center"> 有关"<%= @query_string %>"的职位信息 </h2>
     <div class="search-result">
 
       <div class="row jobs-show0"></div>
-      <div class="job-table">
-        <% @jobs.each do |job| %>
-        <div class="row jobs-show">
 
-          <div class="col-md-12 col-lg-9 col-lg-offset-1">
 
-            <div class="pull-right">
-              发布时间：<%= job.created_at.to_date %>
-              工作城市: <%= job.city %>
-            </div>
-            <p ><%= link_to(job.title, job_path(job)) %></p>
-
-          </div>
-        </div>
-        <% end %>
+      <div class="text-center">
+        <%= render :partial => "job.item", :collection => @jobs, :as => :job %>
+        <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
       </div>
+
     </div>
     <div class="text-center">
       <%= will_paginate(@jobs, renderer: BootstrapPagination::Rails) %>
