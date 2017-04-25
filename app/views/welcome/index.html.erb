@@ -145,8 +145,10 @@
     <hr style= "width:200px">
     <div class="row">
       <div class="col-sm-4">
-        <div class="thumbnail">
-          <img src='<%= image_url 'xuetu.png' %>' alt="search" class = "img-thumbnail">
+        <div class="hjc-img-wrap">
+          <%= link_to jobs_path(:category => "学徒" ) do %>
+            <img src='<%= image_url 'xuetu.png' %>' alt="search" class = "img-thumbnail">
+           <% end %>
           <div class="caption">
             <h3>学徒</h3>
             <p>不要灰心，大师都是从小白开始的</p>
@@ -154,8 +156,10 @@
         </div>
       </div>
       <div class="col-sm-4">
-        <div class="thumbnail">
-          <img src='<%= image_url 'jiangren.png' %>'  alt="search" class = "img-thumbnail">
+        <div class="hjc-img-wrap">
+          <%= link_to jobs_path(:category => "匠人" ) do %>
+            <img src='<%= image_url 'jiangren.png' %>'  alt="search" class = "img-thumbnail">
+          <% end %>
           <div class="caption">
             <h3>匠人</h3>
             <p>努力吧，你的上面还有大师</p>
@@ -163,8 +167,10 @@
         </div>
       </div>
       <div class="col-sm-4">
-        <div class="thumbnail">
-          <img src='<%= image_url 'dashi.png' %>'  alt="search" class = "img-thumbnail">
+        <div class="hjc-img-wrap">
+          <%= link_to jobs_path(:category => "大师" ) do %>
+            <img src='<%= image_url 'dashi.png' %>'  alt="search" class = "img-thumbnail">
+          <% end %>
           <div class="caption">
             <h3>大师</h3>
             <p>大师，永远在探索</p>
@@ -175,7 +181,7 @@
   </div>
 </section>
 
-<div id="sidebar" class="sidebar">
+<!-- <div id="sidebar" class="sidebar">
   <ul>
     <li class="backtop"><i class="fa fa-arrow-circle-up"></i></li>
     <li class="support">
@@ -190,7 +196,7 @@
       </div>
     </li>
   </ul>
-</div>
+</div> -->
 
 <!-- Script to Activate the Carousel -->
 <script>

@@ -2,23 +2,48 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:quit]
   before_action :validate_search_key, only: [:search]
 
+  # def index
+  #   @jobs = Job.published
+  #
+  #   if params[:category].present?
+  #     @category = params[:category]
+  #     @jobs = @jobs.where(:category => @category)
+  #   end
+  #   @jobs = case params[:order]
+  #           when 'by_lower_bound'
+  #             Job.published.order('wage_lower_bound DESC')
+  #           when 'by_upper_bound'
+  #             Job.published.order('wage_upper_bound DESC')
+  #           else
+  #             Job.published.recent.paginate(:page => params[:page], :per_page => 5)
+  #           end
+  #
+  # end
+
   def index
-    @jobs = Job.published
+  # 按职位分类
+     if params[:category].present?
+       @category = params[:category]
+       if @category == '所有职位'
+         @jobs = Job.published.recent.paginate(:page => params[:page], :per_page => 5)
+       else
+         @jobs = Job.published.where(:category => @category).recent.paginate(:page => params[:page], :per_page => 5)
+       end
 
-    if params[:category].present?
-      @category = params[:category]
-      @jobs = @jobs.where(:category => @category)
-    end
-    @jobs = case params[:order]
-            when 'by_lower_bound'
-              Job.published.order('wage_lower_bound DESC')
-            when 'by_upper_bound'
-              Job.published.order('wage_upper_bound DESC')
-            else
-              Job.published.recent.paginate(:page => params[:page], :per_page => 5)
-            end
+     # 不分类
+     else
+       @jobs = case params[:order]
+               when 'by_lower_bound'
+                 Job.published.order('wage_lower_bound DESC').paginate(:page => params[:page], :per_page => 5)
+               when 'by_upper_bound'
+                 Job.published.order('wage_upper_bound DESC').paginate(:page => params[:page], :per_page => 5)
+               else
+                 Job.published.recent.paginate(:page => params[:page], :per_page => 5)
+               end
+     end
 
-  end
+   end
+
 
   def new
     @job = Job.new
