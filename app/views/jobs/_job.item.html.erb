@@ -1,6 +1,6 @@
 <div class="row">
 
-        <div class="col-md-4" style="font-size:20px">
+        <div class="col-md-3" style="font-size:20px">
           <p><%= link_to(job.title,job_path(job)) %></p>
         </div>
 
@@ -15,7 +15,10 @@
           </div>
 
 
-
+          <div class="col-md-2">
+            <i class="fa fa-universal-access" aria-hidden="true" style="color:#FF6F00"></i>
+            <%= job.category %>
+          </div>
 
           <div class="col-md-2">
             <span>

@@ -47,6 +47,9 @@
 <br><br><br><br><br><hr>
           <div class="resume text-center">
                     <%= link_to("投递简历", new_job_resume_path(@job),  class: "btn btn-warning ") %>
+                    <br><br><br>
+                    <%= link_to(content_tag(:i, " 返回", class: "fa fa-hand-o-left"),jobs_path(@job)) %>
+
           </div>
         </div>
      </div>

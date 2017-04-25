@@ -6,20 +6,32 @@
 
     <ul class="nav nav-tabs">
       <div class="col-md-3 text-center">
+        <%= link_to  jobs_path do %>
         <img src='<%= image_url 'zhiwei.png' %>'>
-        <li><%= link_to "所有职位", jobs_path %></li>
+        <br>
+        <%= link_to "所有职位", jobs_path %>
+        <% end %>
       </div>
       <div class="col-md-3 text-center">
+        <%= link_to  jobs_path do %>
         <img src='<%= image_url 'xuetu2.png' %>'>
-        <li><%= link_to "学徒", jobs_path(:category => "学徒" ) %></li>
+        <br>
+        <%= link_to "学徒", jobs_path(:category => "学徒" ) %>
+        <% end %>
       </div>
       <div class="col-md-3 text-center">
+        <%= link_to  jobs_path(:category => "匠人" ) do %>
         <img src='<%= image_url 'jiangren2.png' %>'>
-        <li><%= link_to "匠人", jobs_path(:category => "匠人" ) %></li>
+        <br>
+        <%= link_to "匠人", jobs_path(:category => "匠人" ) %>
+        <% end %>
       </div>
       <div class="col-md-3 text-center">
+        <%= link_to  jobs_path do %>
         <img src='<%= image_url 'dashi2.png' %>'>
-        <li><%= link_to "大师", jobs_path(:category => "大师" ) %></li>
+        <br>
+        <%= link_to "大师", jobs_path(:category => "大师" ) %>
+        <% end %>
       </div>
     </ul>
 
