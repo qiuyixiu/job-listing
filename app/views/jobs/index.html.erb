@@ -13,7 +13,7 @@
         <% end %>
       </div>
       <div class="col-md-3 text-center">
-        <%= link_to  jobs_path do %>
+        <%= link_to  jobs_path(:category => "学徒" ) do %>
         <img src='<%= image_url 'xuetu2.png' %>'>
         <br>
         <%= link_to "学徒", jobs_path(:category => "学徒" ) %>
@@ -27,7 +27,7 @@
         <% end %>
       </div>
       <div class="col-md-3 text-center">
-        <%= link_to  jobs_path do %>
+        <%= link_to  jobs_path(:category => "大师") do %>
         <img src='<%= image_url 'dashi2.png' %>'>
         <br>
         <%= link_to "大师", jobs_path(:category => "大师" ) %>
