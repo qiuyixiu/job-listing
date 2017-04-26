@@ -22,25 +22,28 @@
       </div>
 
       <ul class="nav navbar-nav navbar-right">
-        <% if !current_user %>
-          <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
-        <% else %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Hi!, <%= current_user.email %>
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <% if current_user.admin? %>
-                <li> <%= link_to("Admin Panel", admin_jobs_path) %></li>
-              <% end %>
-              <li class="divider"> </li>
-              <li> <%= link_to("退出", destroy_user_session_path, method: :delete) %> </li>
-            </ul>
-          </li>
-        <% end %>
-      </ul>
+          <% if !current_user %>
+            <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#login-modal">登录</a></li>
+          <% else %>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-user fa-lg" aria-hidden="true" style="color:#FF6F00"></i>
+                    您好! <%= current_user.email %>
+                    <b class="caret"></b>
+
+                </a>
+
+                <ul class="dropdown-menu">
+                  <% if current_user.admin? %>
+                      <li><%= link_to("<span class='fa fa-lock fa-lg' style='color:#FF6F00'></span> 管理后台".html_safe, admin_jobs_path) %></li>
+                  <% end %>
+                      <li><%= link_to("<span class='fa fa-chevron-circle-left fa-lg' style='color:#FF6F00'></span> 退出".html_safe, destroy_user_session_path,  method: :delete) %></li>
+                </ul>
+            </li>
+          <% end %>
+        </ul>
+
     </div>
     <!-- /.navbar-collapse -->
   </div>
@@ -50,7 +53,7 @@
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none,">
   <div class="modal-dialog" role="document">
     <div class="loginmodal-container">
-      <h2>Log in</h2>
+      <h2 class="text-center">账号登录</h2>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email, required: false, autofocus: true %>
@@ -58,7 +61,7 @@
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Log in" %>
+          <%= f.button :submit, "登录" %>
         </div>
       <% end %>
     </div>
@@ -68,7 +71,7 @@
 <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="loginmodal-container">
-      <h2>Sign up</h2>
+      <h2 class="text-center">账号注册</h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
@@ -77,7 +80,7 @@
          <%= f.input :password_confirmation, required: true %>
         </div>
         <div class="form-actions">
-         <%= f.button :submit, "Sign up" %>
+         <%= f.button :submit, "注册" %>
         </div>
       <% end %>
     </div>
