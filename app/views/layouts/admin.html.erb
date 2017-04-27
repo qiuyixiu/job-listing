@@ -19,7 +19,12 @@
             <div class="row">
               <div class="col-md-2">
             <br><br><br>
-                   <div class="active"><%= link_to("职缺列表首页", jobs_path, :class =>  "btn btn-warning" ) %>
+                   <div class="active">
+                     <%= link_to("管理后台", admin_jobs_path, :class =>  "btn btn-warning" ) %>
+                     <br><br>
+                     <%= link_to("发布职位", new_admin_job_path,  :class =>  "btn btn-warning" ) %>
+                     <br><br>
+                     <%= link_to("回到首页", href="/",  :class =>  "btn btn-warning" ) %>
                    </div>
 
 

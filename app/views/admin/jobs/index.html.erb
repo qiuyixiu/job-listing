@@ -1,48 +1,36 @@
-<div class="pull-right">
-    <br>
-    <br>
-    <br>
-    <%= link_to("Add a job", new_admin_job_path,  :class =>  "btn btn-warning" ) %>
-</div>
 
-<br><br>
 
-<table class="table table-boldered table-striped custab">
-  <thead>
+<table class="table  table-hover  text-center">
+  <thead style="color:#FF6F00">
     <tr>
-      <td>职缺</td>
-      <td>收到履历数量</td>
+      <td>职位</td>
+      <td>应聘人数</td>
       <td>工作城市</td>
-      <td>薪资下限</td>
-      <td>薪资上限</td>
-      <td>管理选项</td>
-      <td>刊登时间</td>
+      <td>薪资范围</td>
+      <td>操作选项</td>
+      <td>发布时间</td>
     </tr>
   </thead>
   <% @jobs.each do |job| %>
   <tr>
     <td>
       <%= render_job_status(job) %>
-
       <%= link_to(job.title, admin_job_path(job)) %>
     </td>
     <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
     <td><%= link_to(job.city, job_path(job)) %></td>
-    <td> <%= job.wage_lower_bound %> </td>
-    <td> <%= job.wage_upper_bound %> </td>
-
+    <td> <%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %> </td>
     <td>
-      <%= link_to("Edit", edit_admin_job_path(job), :class => "btn btn-xs btn-info") %>
-      <%= link_to("Destroy", admin_job_path(job), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?"}) %>
+      <%= link_to("编辑", edit_admin_job_path(job), :class => "btn btn-xs btn-info") %>
+      <%= link_to("删除", admin_job_path(job), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?"}) %>
       <% if job.is_hidden %>
-
-        <%= link_to("Publish", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-success") %>
+        <%= link_to("发布", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-success") %>
       <% else %>
-        <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-warning") %>
+        <%= link_to("隐藏", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-warning") %>
       <% end %>
     </td>
     <td>
-      <%= job.created_at %>
+      <%= local_time(job.created_at, '%B %e') %>
     </td>
   </tr>
   <% end %>
