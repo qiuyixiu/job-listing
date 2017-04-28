@@ -6,19 +6,16 @@
       <br>
         <title>Job Listing </title>
         <%= csrf_meta_tags %>
-
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
-
     <body>
-
         <div class="container-fluid">
             <%= render "common/navbar" %>
             <%= render "common/flashes" %>
             <div class="row">
               <div class="col-md-2">
-            <br><br><br>
+                  <br><br><br>
                    <div class="active">
                      <%= link_to("管理后台", admin_jobs_path, :class =>  "btn btn-warning" ) %>
                      <br><br>
@@ -26,17 +23,12 @@
                      <br><br>
                      <%= link_to("回到首页", href="/",  :class =>  "btn btn-warning" ) %>
                    </div>
-
-
               </div>
-
               <div class="col-md-10">
                 <%= yield %>
               </div>
            </div>
         </div>
-
         <%= render "common/footer" %>
-
     </body>
 </html>
