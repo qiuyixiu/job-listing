@@ -2,8 +2,6 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:quit]
   before_action :validate_search_key, only: [:search]
 
-
-
   def index
   # 按职位分类
      if params[:category].present?
@@ -77,9 +75,6 @@ class JobsController < ApplicationController
     end
   end
 
-
-
-
   protected
 
   def validate_search_key
@@ -89,12 +84,9 @@ class JobsController < ApplicationController
     end
   end
 
-
   def search_criteria(query_string)
     { :title_cont => query_string }
   end
-
-
 
   private
 

@@ -4,10 +4,16 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="/"><img src='<%= image_url 'legal.ico' %>'>一休工作室首页</i></a>
       <a class="navbar-brand" href="/jobs">皮匠职位</a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="navbar-collapse navbar-ex1-collapse collapse in" aria-expanded="false" style="">
       <div class="nav navbar-nav navbar-left">
           <%= form_tag search_jobs_path , :method => :get do %>
         <div class="input-group" id="search-id" >
